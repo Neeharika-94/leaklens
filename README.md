@@ -1,19 +1,54 @@
-# LeakLens prototype
-Claude analyses statements; LeakLens stores structured findings, calculates (Decimal, no AI), gets accountant approval, shares a founder report and tracks savings.
+# LeakLens – AI-Powered Audit & Expense Leakage Detection
 
-## Run locally
-    cd backend
-    python -m venv .venv
-    .venv\Scripts\activate          # Mac/Linux: source .venv/bin/activate
-    pip install -r requirements.txt
-    python tests/test_calc.py
-    uvicorn app.main:application --reload
-Open http://localhost:8000. Login: meera@leaklens.demo / Meera@12345. MCP URL: http://localhost:8000/mcp/ll_demo_local
+LeakLens is an audit and expense leakage detection platform that uses Claude-assisted analysis to identify potential financial irregularities. It stores structured findings, performs deterministic calculations using Python Decimal, enables accountant approval, generates founder-facing reports, and tracks savings.
 
-## Deploy (Render, free)
-Push to GitHub -> Render: New > Blueprint > select repo (uses render.yaml). The Connect page shows the live MCP URL.
-Free tier sleeps when idle and resets its database on restart; demo data is re-seeded automatically.
+## Live Demo
 
-## Status
-Implemented: login, seeded demo, audit view, approve/reject/edit/delete/add, calculators, publish + founder report (comment, owner, fixed/dismissed), savings tracking, hosted MCP (12 tools), simulate-Claude demo mode (labelled).
-Not implemented (phase 2): admin panel, payments, email flows, PDF/CSV export, link password, revoke UI, migrations.
+**Application:** [Add your Render URL here]
+
+**Demo Login:**
+- Email: `meera@leaklens.demo`
+- Password: `Meera@12345`
+
+## Run Locally
+
+```bash
+cd backend
+python -m venv .venv
+.venv\Scripts\activate
+pip install -r requirements.txt
+python tests/test_calc.py
+uvicorn app.main:application --reload
+```
+
+Open: `http://localhost:8000`
+
+**Local MCP URL:** `http://localhost:8000/mcp/ll_demo_local`
+
+## Deployment
+
+Deployed using Render (Free Tier), connected to GitHub through a Blueprint using `render.yaml`.
+
+**Note:** The free hosting service may sleep after inactivity, and its local database may reset after restarts or redeployments. Demo data is automatically re-seeded.
+
+## Implemented Features
+
+- Login and seeded demo account
+- Audit dashboard and findings management
+- Approve, reject, edit, delete and add findings
+- Financial calculators
+- Audit report publishing
+- Founder-facing reports with comments and ownership tracking
+- Savings tracking
+- Hosted MCP server with 12 tools
+- Simulated Claude demo mode
+
+## Planned Features (Phase 2)
+
+- Admin panel
+- Payment integration
+- Email notifications and workflows
+- PDF/CSV exports
+- Password-protected reports
+- Report revocation interface
+- Database migrations
